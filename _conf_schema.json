@@ -1,0 +1,62 @@
+{
+  "enable": {
+    "type": "bool",
+    "default": true,
+    "description": "总开关",
+    "hint": "关掉后完全不注入，也不消耗任何 token。"
+  },
+  "bili_db_path": {
+    "type": "string",
+    "default": "/AstrBot/data/plugin_data/astrbot_plugin_bilibili_ai_bot/bilibot.sqlite3",
+    "description": "bilibili_ai_bot 的数据库路径",
+    "hint": "只读打开。换容器挂载路径时改这里。"
+  },
+  "max_age_hours": {
+    "type": "int",
+    "default": 48,
+    "description": "只看多久以内的视频",
+    "hint": "太旧的提起来会像翻旧账，48 小时内比较自然。"
+  },
+  "min_score": {
+    "type": "int",
+    "default": 5,
+    "description": "最低评分（1-10）",
+    "hint": "她给视频打的分数低于这个值就不提，省得提起自己都觉得没意思的东西。"
+  },
+  "probability": {
+    "type": "float",
+    "default": 0.5,
+    "description": "有可提内容时，实际注入的概率",
+    "hint": "0.5 表示一半的对话会带上；调低更克制，调高更容易主动开口。"
+  },
+  "daily_limit": {
+    "type": "int",
+    "default": 2,
+    "description": "每天最多提几次",
+    "hint": "一天到晚说“我今天刷到个视频”会很假。"
+  },
+  "cooldown_minutes": {
+    "type": "int",
+    "default": 90,
+    "description": "两次注入的最小间隔（分钟）",
+    "hint": "防止连着几条消息都提视频。"
+  },
+  "reuse_days": {
+    "type": "int",
+    "default": 7,
+    "description": "同一条视频多少天后可以再提",
+    "hint": "0 表示永不重复。"
+  },
+  "inject_probability_on_miss": {
+    "type": "float",
+    "default": 0.0,
+    "description": "无匹配话题时的兜底注入概率",
+    "hint": "留 0 表示只在话题擦边时才提；想让她更爱分享可以调到 0.1~0.2。"
+  },
+  "intent_probability": {
+    "type": "float",
+    "default": 0.9,
+    "description": "被问到自己（今天看了什么/最近刷到啥）时的注入概率",
+    "hint": "这类问题不提视频就是答非所问，所以默认 0.9；这类场景也不要求话题词重叠。留 0 等于关掉意图识别。"
+  }
+}

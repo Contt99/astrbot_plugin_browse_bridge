@@ -1,0 +1,7 @@
+name: astrbot_plugin_browse_bridge
+display_name: 大肥鱼刷到什么
+desc: 把 bilibili_ai_bot 真实看过的视频，按时机轻轻塞进对话上下文；不改对方插件、不动 system_prompt。
+version: 0.1.2
+author: Contt99
+repo: https://github.com/Contt99/astrbot_plugin_browse_bridge
+astrbot_version: ">=4.29.4"
